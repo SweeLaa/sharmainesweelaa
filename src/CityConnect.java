@@ -56,6 +56,11 @@ public class CityConnect {
 	private static final String MESSAGE_NO_SPACE = "No more space to store locations";
 	private static final String MESSAGE_ENTER_COMMAND = "Enter command:";
 	private static final String ERROR_UNRECOGNIZED_COMMAND = "Unrecognized command type";
+	private static final String ERROR_STRING_NULL = "command type string cannot be null!";
+	private static final String ERROR_NULL_ENDPOINT = "Route end points cannot be null";
+	private static final String COMMAND_TYPE_ADDROUTE = "addroute";
+	private static final String COMMAND_TYPE_GETDISTANCE = "getdistance";
+	private static final String COMMAND_TYPE_EXIT = "exit";
 
 	// These are the possible command types ////
 	enum COMMAND_TYPE {
@@ -173,13 +178,13 @@ public class CityConnect {
 	 */
 	private static COMMAND_TYPE determineCommandType(String commandTypeString) {
 		if (commandTypeString == null)
-			throw new Error("command type string cannot be null!");
+			throw new Error(ERROR_STRING_NULL);
 
-		if (commandTypeString.equalsIgnoreCase("addroute")) {
+		if (commandTypeString.equalsIgnoreCase(COMMAND_TYPE_ADDROUTE)) {
 			return COMMAND_TYPE.ADD_ROUTE;
-		} else if (commandTypeString.equalsIgnoreCase("getdistance")) {
+		} else if (commandTypeString.equalsIgnoreCase(COMMAND_TYPE_GETDISTANCE)) {
 			return COMMAND_TYPE.GET_DISTANCE;
-		} else if (commandTypeString.equalsIgnoreCase("exit")) {
+		} else if (commandTypeString.equalsIgnoreCase(COMMAND_TYPE_EXIT)) {
 		 	return COMMAND_TYPE.EXIT;
 		} else {
 			return COMMAND_TYPE.INVALID;
@@ -315,7 +320,7 @@ public class CityConnect {
 
 		if ((startLocation1 == null) || (endLocation1 == null)
 				&& (startLocation2 == null) || (endLocation2 == null)){
-			throw new Error("Route end points cannot be null");
+			throw new Error(ERROR_NULL_ENDPOINT);
 		}
 
 		return (startLocation1.equalsIgnoreCase(startLocation2) && endLocation1
