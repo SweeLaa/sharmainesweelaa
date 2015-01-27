@@ -57,7 +57,7 @@ public class CityConnect {
 	private static final String MESSAGE_ENTER_COMMAND = "Enter command:";
 	private static final String ERROR_UNRECOGNIZED_COMMAND = "Unrecognized command type";
 
-	// These are the possible command types //
+	// These are the possible command types ////
 	enum COMMAND_TYPE {
 		ADD_ROUTE, GET_DISTANCE, INVALID, EXIT
 	};
