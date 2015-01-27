@@ -31,8 +31,11 @@ import java.util.Scanner;
  Enter command:getdistance Clementi JurongWest
  Distance from Clementi to JurongWest is 24
  Enter command:exit
+ 
+ Refactoring done by: Sharmaine
 
  * @author Dave Jun
+ 
  */
 public class CityConnect {
 
