@@ -81,9 +81,12 @@ public class CityConnect {
 	private static final int PARAM_POSITION_START_LOCATION = 0;
 	private static final int PARAM_POSITION_END_LOCATION = 1;
 	private static final int PARAM_POSITION_DISTANCE = 2;
+	
+	private static final int SIZE_FOR_ROUTE_ROW = 10;
+	private static final int SIZE_FOR_ROUTE_COL = 3;
 
 	// This array will be used to store the routes
-	private static String[][] route = new String[10][3];
+	private static String[][] route = new String[SIZE_FOR_ROUTE_ROW][SIZE_FOR_ROUTE_COL];
 
 	/*
 	 * These are the locations at which various components of the route will be
