@@ -317,8 +317,8 @@ public class CityConnect {
 	private static boolean isSameRoute(String startLocation1,
 			String endLocation1, String startLocation2, String endLocation2) {
 
-		if ((startLocation1 == null) || (endLocation1 == null)
-				&& (startLocation2 == null) || (endLocation2 == null)){
+		if ( (startLocation1 == null || endLocation1 == null)
+				&&  (startLocation2 == null || endLocation2 == null)){
 			throw new Error(ERROR_NULL_ENDPOINT);
 		}
 
