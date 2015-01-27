@@ -54,8 +54,10 @@ public class CityConnect {
 	private static final String MESSAGE_INVALID_FORMAT = "invalid command format :%1$s";
 	private static final String WELCOME_MESSAGE = "Welcome to SimpleRouteStore!";
 	private static final String MESSAGE_NO_SPACE = "No more space to store locations";
+	private static final String MESSAGE_ENTER_COMMAND = "Enter command:";
+	private static final String ERROR_UNRECOGNIZED_COMMAND = "Unrecognized command type";
 
-	// These are the possible command types
+	// These are the possible command types //
 	enum COMMAND_TYPE {
 		ADD_ROUTE, GET_DISTANCE, INVALID, EXIT
 	};
@@ -104,7 +106,7 @@ public class CityConnect {
 	public static void main(String[] args) {
 		showToUser(WELCOME_MESSAGE);
 		while (true) {
-			System.out.print("Enter command:");
+			System.out.print(MESSAGE_ENTER_COMMAND);
 			String command = scanner.nextLine();
 			String userCommand = command;
 			String feedback = executeCommand(userCommand);
@@ -143,7 +145,7 @@ public class CityConnect {
 			System.exit(0);
 		default:
 			//throw an error if the command is not recognized
-			throw new Error("Unrecognized command type");
+			throw new Error(ERROR_UNRECOGNIZED_COMMAND);
 		}
 		/*
 		 * ==============NOTE TO STUDENTS======================================
