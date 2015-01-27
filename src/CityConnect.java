@@ -196,9 +196,6 @@ public class CityConnect {
 	/**
 	 * This operation is used to find the distance between two locations
 	 * 
-	 * @param userCommand
-	 *            is the full string user has entered as the command
-	 * @return the distance
 	 */
 	private static String getDistance(String userCommand) {
 
