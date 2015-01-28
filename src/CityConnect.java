@@ -114,9 +114,7 @@ public class CityConnect {
 	public static void main(String[] args) {
 		showToUser(WELCOME_MESSAGE);
 		while (true) {
-			System.out.print(MESSAGE_ENTER_COMMAND);
-			String userCommand = scanner.nextLine();
-			String feedback = executeCommand(userCommand);
+			String feedback = execute();
 			showToUser(feedback);
 		}
 	}
@@ -131,6 +129,15 @@ public class CityConnect {
 
 	private static void showToUser(String text) {
 		System.out.println(text);
+	}
+	
+	public static String execute() {
+		
+		System.out.print(MESSAGE_ENTER_COMMAND);
+		String userCommand = scanner.nextLine();
+		String feedback = executeCommand(userCommand);
+
+		return feedback;
 	}
 
 	public static String executeCommand(String userCommand) {
